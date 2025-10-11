@@ -1,12 +1,26 @@
-# 🏆 Sistema ELO per giochi di carte
+# 🏆 ELO Ranking System
 
-Applicazione Streamlit per gestire un sistema di punteggi ELO tra amici.  
-I punteggi vengono letti e aggiornati su un file Excel.
+This Streamlit application manages and tracks player ratings using the ELO system.  
+It allows users to view the current rankings, update results after matches, and manage players securely through a password-protected admin interface.
 
-## Come usarla
+📍 **Live App:** [Open app in Streamlit](https://ranking-boccio.streamlit.app/)
 
-1. Inserisci i giocatori in ordine di piazzamento separati da una virgola.
-2. Clicca su **Aggiorna classifica**.
-3. Il file `ELO.xlsx` verrà aggiornato automaticamente.
+## 🚀 Features
 
-Sviluppato in Python + Streamlit.
+### 👥 Player Management
+- Add or remove players directly from the app  
+- Initial ELO rating automatically set to **100** for new players  
+- All data stored and synchronized with a **Google Sheet**
+
+### 🧮 Match Updates
+- Update the ranking after each match by entering players **in order of placement**  
+- The app automatically recalculates and saves updated ELO scores  
+- Input validation ensures:
+  - At least two distinct players per match  
+  - No duplicate names  
+  - All names must already exist in the database
+
+### 🔒 Admin Protection
+- All write operations (add, remove, update) are **password-protected**  
+- The password is stored securely in `st.secrets`  
+- Users without the password can **only view** the current rankings
